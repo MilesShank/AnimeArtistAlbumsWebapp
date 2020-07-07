@@ -28,4 +28,30 @@ nav ul{
 .album-art{
     max-width: 200px;
     max-height: 200px;
+    border-style: double;
+    border-width: 1em;
+    border-radius: 20px;
+}
+.artist-art{
+    max-width: 200px;
+    border-style: double;
+    border-width: 1em;
+    border-radius: 20px;
+}
+.top-rated-albums{
+background-color: sandybrown;
+}
+.top-rated-artists{
+    background-color: seagreen;
+}
+.recently-added{
+    background-color: slateblue;
+}
+.index-page-grid{
+    display:grid;
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+h1{
+   text-align: center;
 }
