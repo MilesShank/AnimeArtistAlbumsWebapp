@@ -47,12 +47,15 @@ nav ul{
 }
 .top-rated-albums{
 background-color: sandybrown;
+text-align: center;
 }
 .top-rated-artists{
     background-color: seagreen;
+    text-align: center;
 }
 .recently-added{
     background-color: slateblue;
+    text-align: center;
 }
 .index-page-grid{
     display:grid;
