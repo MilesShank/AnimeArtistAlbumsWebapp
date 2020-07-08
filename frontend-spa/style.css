@@ -1,3 +1,6 @@
+a {
+    text-decoration: none;
+}
 ul {
   list-style: none;
   text-decoration: none;
@@ -90,9 +93,19 @@ nav ul{
     grid-template-columns: 1fr 2fr;
     background-color:slateblue;
 }
+.embedded-video{
+    display:flex;
+    justify-content:center;
+    padding:5px;
+}
+iframe{
+    border-style: double;
+    border-width: 1em;
+    border-radius: 20px;
+}
 .top-rated-albums{
-background-color: sandybrown;
-text-align: center;
+    background-color: sandybrown;
+    text-align: center;
 }
 .top-rated-artists{
     background-color: seagreen;
@@ -109,4 +122,22 @@ text-align: center;
 }
 h1{
    text-align: center;
+}
+.return-reference ul{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    background-color: powderblue;
+}
+.song-container{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: orange;
+}
+.song-details{
+    background-color: pink;
+}
+.song-details li{
+    display:flex;
+    padding: 1em;
 }
