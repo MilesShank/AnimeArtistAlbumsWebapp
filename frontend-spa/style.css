@@ -40,7 +40,18 @@ nav ul{
 .artist-container{
     display:grid;
     grid-template-rows: 3fr 2fr;
-    background-color:red;
+    background-color:grey;
+}
+.album-description{
+    display:grid;
+    flex-wrap: wrap;
+    padding-left: 3em;
+}
+.album-details ul{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
 }
 .artist-grid{
     display: flex;
