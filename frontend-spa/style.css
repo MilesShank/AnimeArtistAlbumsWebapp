@@ -31,7 +31,30 @@ nav ul{
     font-size: x-large;
     padding-right: 1em;
 }
-
+.artist-albums ul{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+}
+.artist-container{
+    display:grid;
+    grid-template-rows: 3fr 2fr;
+    background-color:red;
+}
+.artist-grid{
+    display: flex;
+    flex-flow: column wrap;
+    background-color: green;
+}
+.artist-grid li{
+    display:flex;
+    padding: 1em;
+}
+.artist-grid-item2{
+    justify-self: center;
+    padding-top: 5px;
+}
 .album-art{
     max-width: 200px;
     max-height: 200px;
@@ -44,6 +67,17 @@ nav ul{
     border-style: double;
     border-width: 1em;
     border-radius: 20px;
+}
+.single-artist-art{
+    max-width: 400px;
+    border-style: double;
+    border-width: 1em;
+    border-radius: 20px;
+}
+.artist-info{
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    background-color:slateblue;
 }
 .top-rated-albums{
 background-color: sandybrown;
