@@ -27,11 +27,13 @@
     --color-4:#CBF3F0;
     --color-5:#2EC4B6;
   } */
+
   *{
     border-radius: 20px;
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: 'Russo One', sans-serif;
   }
 body{
     background-color: var(--color-2);
@@ -145,6 +147,7 @@ nav{
     min-height: 30px;
     margin-top: 10px;
     border-radius: 0px;
+    font-family: 'Bangers', cursive;
 }
 nav a{
     font-size: large;
