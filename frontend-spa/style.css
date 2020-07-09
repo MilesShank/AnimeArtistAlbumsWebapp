@@ -1,13 +1,60 @@
+/* color palette variables */
+
+/* https://coolors.co/0b3954-087e8b-f96e46-bfd7ea-883677 */
+/* :root{
+  --color-1:#0B3954;
+  --color-2:#087E8B;
+  --color-3:#F96E46;
+  --color-4:#BFD7EA;
+  --color-5:#883677;
+} */
+
+/* https://www.color-hex.com/color-palette/94974 */
+:root{
+    --color-1:#20547b;
+    --color-2:#368faa;
+    --color-3:#d7c5af;
+    --color-4:#efd28a;
+    --color-5:#ea7252;
+  }
+
+  /* https://coolors.co/ff9f1c-ffbf69-f5f5f5-cbf3f0-2ec4b6 */
+/* She sell sea shells by the seashore */
+  /* :root{
+    --color-1:#FF9F1C;
+    --color-2:#FFBF69;
+    --color-3:#F5F5F5;
+    --color-4:#CBF3F0;
+    --color-5:#2EC4B6;
+  } */
+  *{
+    border-radius: 20px;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+body{
+    background-color: var(--color-2);
+   
+}
 a {
     text-decoration: none;
-    color: black;
+    color:rgb(4, 17, 44);
 }
-a:hover{ 
-    background-color:rgba(255,255, 255, .7);
+
+a:hover{
+
+}
+
+nav a:hover,
+.return-reference a:hover{ 
+    color:rgb(4, 17, 44);
+    background-color:rgb(255,255,255,.7);
     border-radius: 10px;
     padding:10px;
 }
 .all-albums-container ul{
+    background-color: var(--color-5);
     display:flex;
     flex-flow:row wrap;
     justify-content: space-around;
@@ -32,6 +79,7 @@ a:hover{
     text-align: center;
 }
 .all-artists-container ul{
+    background-color: var(--color-5);
     display:flex;
     flex-flow:row wrap;
     justify-content: space-around;
@@ -40,7 +88,7 @@ a:hover{
 .artist-container{
     display:grid;
     grid-template-rows: 3fr 2fr;
-    background-color:grey;
+    background-color: var(--color-5);
 }
 .artist-albums ul{
     display:flex;
@@ -51,7 +99,7 @@ a:hover{
 .artist-grid{
     display: flex;
     flex-flow: column wrap;
-    background-color: green;
+    background-color: var(--color-5);
 }
 .artist-grid li{
     display:flex;
@@ -70,7 +118,7 @@ a:hover{
 .artist-info{
     display:grid;
     grid-template-columns: 1fr 2fr;
-    background-color:slateblue;
+    background-color:var(--color-5);
 }
 .embedded-video{
     display:flex;
@@ -88,12 +136,15 @@ iframe{
 .index-page-grid{
     display:grid;
     justify-content: space-between;
+    column-gap: 1em;
     grid-template-columns: 1fr 1fr 1fr;
+ 
 }
 nav{
-    background-color: rosybrown;
+    background-color: var(--color-1);
     min-height: 30px;
     margin-top: 10px;
+    border-radius: 0px;
 }
 nav a{
     font-size: large;
@@ -110,14 +161,17 @@ nav ul{
 
 }
 .recently-added{
-    background-color: slateblue;
+    background-color: var(--color-5);
     text-align: center;
+    
 }
 .return-reference ul{
+    border-radius: 0px;
+    padding: 1em;
     display:flex;
     flex-direction:row;
     justify-content:space-around;
-    background-color: powderblue;
+    background-color: var(--color-1);
 }
 .single-artist-art{
     max-width: 400px;
@@ -126,12 +180,13 @@ nav ul{
     border-radius: 20px;
 }
 .song-container{
+    background-color: var(--color-5);
     display:grid;
     grid-template-columns: 1fr 1fr;
-    background-color: orange;
+    background-color:var(--color-5);
 }
 .song-details{
-    background-color: pink;
+    background-color: var(--color-5);
 }
 .song-details li{
     display:flex;
@@ -143,11 +198,14 @@ nav ul{
     padding-right: 1em;
 }
 .top-rated-albums{
-    background-color: sandybrown;
+    background-color: var(--color-4);
     text-align: center;
+    align-items: center;
 }
+
+
 .top-rated-artists{
-    background-color: seagreen;
+    background-color: var(--color-3);
     text-align: center;
 }
 ul {
