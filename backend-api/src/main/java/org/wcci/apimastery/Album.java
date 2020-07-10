@@ -1,6 +1,7 @@
 package org.wcci.apimastery;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 public class Album {
@@ -13,8 +14,10 @@ public class Album {
     @ManyToOne
     private Artist artist;
     @OneToMany
-   private Collection <Song> songs;
-    protected Album(){}
+    private Collection<Song> songs;
+
+    protected Album() {
+    }
 
     public Album(String image, String title, String recordLabel) {
         this.image = image;
@@ -39,6 +42,6 @@ public class Album {
     }
 
     public Collection<Song> getSongs() {
-       return songs;
+        return songs;
     }
 }

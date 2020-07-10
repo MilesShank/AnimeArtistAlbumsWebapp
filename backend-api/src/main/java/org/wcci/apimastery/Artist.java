@@ -5,13 +5,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.Collection;
+
 @Entity
 public class Artist {
     @Id
     @GeneratedValue
     private Long id;
-    @OneToMany
-    private Collection <Album> albums;
+    @OneToMany(mappedBy = "artist")
+    private Collection<Album> albums;
     private String description;
     private String recordLabel;
     private String imageSource;
@@ -25,7 +26,8 @@ public class Artist {
         this.name = name;
     }
 
-    protected Artist(){};
+    protected Artist() {
+    }
 
     public Long getId() {
         return id;
