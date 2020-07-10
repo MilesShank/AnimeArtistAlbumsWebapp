@@ -12,9 +12,9 @@ public class Song {
     private String songLink;
     private String songDuration;
     @ManyToOne
-    private Collection<Album> albums;
+    private Album albums;
     @ManyToOne
-    private Collection<Artist> artists;
+    private Artist artists;
 
     public Song(String songTitle, String songLink, String songDuration) {
         this.songTitle = songTitle;
@@ -40,11 +40,11 @@ public class Song {
         return songDuration;
     }
 
-    public Collection<Album> getAlbums() {
+    public Album getAlbums() {
         return albums;
     }
 
-    public Collection<Artist> getArtists() {
+    public Artist getArtists() {
         return artists;
     }
 }
