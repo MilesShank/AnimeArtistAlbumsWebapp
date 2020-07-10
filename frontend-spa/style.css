@@ -43,10 +43,6 @@ a {
     text-decoration: none;
     color:rgb(4, 17, 44);
 }
-
-a:hover{
-
-}
 nav a:hover,
 .return-reference a:hover{ 
     color:rgb(4, 17, 44);
@@ -146,7 +142,6 @@ nav{
     min-height: 30px;
     margin-top: 10px;
     border-radius: 0px;
-    font-family: 'Bangers', cursive;
 }
 nav a{
     font-size: large;
@@ -160,7 +155,6 @@ nav ul{
   justify-content: center;
   justify-content: space-around;
   padding: 1em;
-
 }
 .recently-added{
     background-color: var(--color-5);
@@ -198,6 +192,7 @@ nav ul{
     font-weight: 200;
     font-size: x-large;
     padding-right: 1em;
+    font-family: 'Bangers', cursive;
 }
 .top-rated-albums{
     background-color: var(--color-4);
