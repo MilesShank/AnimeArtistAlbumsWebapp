@@ -7,7 +7,7 @@ import java.util.Collection;
 public class Song {
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
     private String songTitle;
     private String songLink;
     private String songDuration;
@@ -24,7 +24,7 @@ public class Song {
 
     protected Song(){}
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
