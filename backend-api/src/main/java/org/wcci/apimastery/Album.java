@@ -1,5 +1,7 @@
 package org.wcci.apimastery;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Collection;
 
@@ -11,6 +13,7 @@ public class Album {
     private String image;
     private String title;
     private String recordLabel;
+    @JsonIgnore
     @ManyToOne
     private Artist artist;
     @OneToMany
@@ -19,8 +22,9 @@ public class Album {
     protected Album() {
     }
 
-    public Album(String title, String recordLabel, String image) {
+    public Album(String title, Artist artist, String recordLabel, String image) {
         this.image = image;
+        this.artist = artist;
         this.title = title;
         this.recordLabel = recordLabel;
     }
@@ -43,5 +47,9 @@ public class Album {
 
     public Collection<Song> getSongs() {
         return songs;
+    }
+
+    public Artist getArtist() {
+        return artist;
     }
 }
