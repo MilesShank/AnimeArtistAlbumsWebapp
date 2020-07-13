@@ -19,7 +19,7 @@ public class Album {
     protected Album() {
     }
 
-    public Album(String image, String title, String recordLabel) {
+    public Album(String title, String recordLabel, String image) {
         this.image = image;
         this.title = title;
         this.recordLabel = recordLabel;
