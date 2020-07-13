@@ -18,7 +18,7 @@ public class SongStorage {
         return songRepo.save(song);
     }
 
-//    public void Song delete(long id) {
-//        songRepo.deleteById(id);
-//    }
+    public void delete(long id) {
+        songRepo.deleteById(id);
+    }
 }

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Populator implements CommandLineRunner {
+
     ArtistStorage artistStorage;
     AlbumStorage albumStorage;
     SongStorage songStorage;
