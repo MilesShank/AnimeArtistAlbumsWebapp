@@ -1,7 +1,13 @@
-package org.wcci.apimastery;
+package org.wcci.apimastery.Storage;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.wcci.apimastery.Entities.Album;
+import org.wcci.apimastery.Entities.Artist;
+import org.wcci.apimastery.Entities.Song;
+import org.wcci.apimastery.Storage.AlbumStorage;
+import org.wcci.apimastery.Storage.ArtistStorage;
+import org.wcci.apimastery.Storage.SongStorage;
 
 @Component
 public class Populator implements CommandLineRunner {
@@ -27,10 +33,10 @@ public class Populator implements CommandLineRunner {
         artistStorage.save(artist3);
         artistStorage.save(artist4);
 
-        Album narutoAlbum= new Album("Naruto Album", "Kioon", "Album Image");
-        Album cowboyAlbum= new Album("Cowboy Bebop", "Victor Entertainment", "Album Image");
-        Album darlingAlbum= new Album("Kiss of Death", "Sony Music Entertainment Japan", "Album Image");
-        Album deathnoteAlbum= new Album("The WORLD", "Nippon Crown", "Image Source");
+        Album narutoAlbum= new Album("Naruto Album", artist1, "Kioon", "Album Image");
+        Album cowboyAlbum= new Album("Cowboy Bebop", artist2, "Victor Entertainment", "Album Image");
+        Album darlingAlbum= new Album("Kiss of Death", artist3, "Sony Music Entertainment Japan", "Album Image");
+        Album deathnoteAlbum= new Album("The WORLD", artist4, "Nippon Crown", "Image Source");
         albumStorage.save(narutoAlbum);
         albumStorage.save(cowboyAlbum);
         albumStorage.save(darlingAlbum);
