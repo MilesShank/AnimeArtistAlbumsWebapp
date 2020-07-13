@@ -18,8 +18,7 @@ public class Artist {
     private String imageSource;
     private String name;
 
-    public Artist(Long id, String description, String recordLabel, String imageSource, String name) {
-        this.id = id;
+    public Artist( String name, String description, String recordLabel, String imageSource) {
         this.description = description;
         this.recordLabel = recordLabel;
         this.imageSource = imageSource;
