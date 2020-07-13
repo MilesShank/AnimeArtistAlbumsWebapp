@@ -1,9 +1,11 @@
-package org.wcci.apimastery;
+package org.wcci.apimastery.Controllers;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import org.wcci.apimastery.Storage.AlbumStorage;
+import org.wcci.apimastery.Entities.Album;
 
 import java.util.Collection;
 

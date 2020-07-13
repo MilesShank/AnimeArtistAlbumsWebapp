@@ -1,7 +1,6 @@
-package org.wcci.apimastery;
+package org.wcci.apimastery.Entities;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 @Entity
 public class Song {

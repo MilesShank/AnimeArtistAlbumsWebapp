@@ -1,8 +1,10 @@
-package org.wcci.apimastery;
+package org.wcci.apimastery.Controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import org.wcci.apimastery.Entities.Song;
+import org.wcci.apimastery.Storage.SongStorage;
 
 @RestController
 public class SongController {

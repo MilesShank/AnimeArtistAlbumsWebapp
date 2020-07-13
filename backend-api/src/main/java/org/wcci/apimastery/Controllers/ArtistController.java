@@ -1,6 +1,10 @@
-package org.wcci.apimastery;
+package org.wcci.apimastery.Controllers;
 
 import org.springframework.web.bind.annotation.*;
+import org.wcci.apimastery.Storage.AlbumStorage;
+import org.wcci.apimastery.Storage.ArtistStorage;
+import org.wcci.apimastery.Entities.Album;
+import org.wcci.apimastery.Entities.Artist;
 
 import java.util.Collection;
 

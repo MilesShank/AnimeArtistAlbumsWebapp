@@ -1,7 +1,13 @@
-package org.wcci.apimastery;
+package org.wcci.apimastery.Storage;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.wcci.apimastery.Entities.Album;
+import org.wcci.apimastery.Entities.Artist;
+import org.wcci.apimastery.Entities.Song;
+import org.wcci.apimastery.Storage.AlbumStorage;
+import org.wcci.apimastery.Storage.ArtistStorage;
+import org.wcci.apimastery.Storage.SongStorage;
 
 @Component
 public class Populator implements CommandLineRunner {
