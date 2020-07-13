@@ -7,7 +7,7 @@ import java.util.Collection;
 public class Album {
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
     private String image;
     private String title;
     private String recordLabel;
@@ -25,8 +25,8 @@ public class Album {
         this.recordLabel = recordLabel;
     }
 
-    public long getId() {
-        return id;
+    public Long getId() {
+      return id;
     }
 
     public String getImage() {
