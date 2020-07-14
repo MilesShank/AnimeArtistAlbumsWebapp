@@ -13,4 +13,6 @@ const renderPage = (mainPageDisplay) => {
     const container = document.querySelector('.container');
 
     container.prepend(createHeader(mainPageDisplay))
+    container.appendChild(displayAllArtists)(mainPageDisplay)
+    
 }
