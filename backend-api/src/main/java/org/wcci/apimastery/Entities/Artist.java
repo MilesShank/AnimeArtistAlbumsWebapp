@@ -11,7 +11,7 @@ public class Artist {
     @Id
     @GeneratedValue
     private Long id;
-    @OneToMany(mappedBy = "artist")
+    @OneToMany(mappedBy = "artist", orphanRemoval = true)
     private Collection<Album> albums;
     private String description;
     private String recordLabel;
