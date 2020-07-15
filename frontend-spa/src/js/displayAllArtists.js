@@ -6,7 +6,8 @@ const displayAllArtists = (artists) => {
     const mainSection = document.createElement("main")
 
     mainSection.classList.add('artists');
-    mainSection.innerHTML = `
+    mainSection.innerHTML = 
+    `
     <container class="all-artists-container">
       <ul>
         <li>
@@ -36,4 +37,5 @@ const displayAllArtists = (artists) => {
       </ul>
     </container>
     `
+    return mainSection
 }
