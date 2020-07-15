@@ -8,7 +8,6 @@ import org.wcci.apimastery.Entities.Artist;
 
 import java.util.Collection;
 
-@CrossOrigin
 @RestController
 public class ArtistController {
 
