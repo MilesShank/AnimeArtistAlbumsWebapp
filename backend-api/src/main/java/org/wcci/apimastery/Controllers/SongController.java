@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.wcci.apimastery.Entities.Song;
 import org.wcci.apimastery.Storage.SongStorage;
 
-@CrossOrigin
 @RestController
 public class SongController {
 

@@ -10,7 +10,7 @@ public class Album {
     @Id
     @GeneratedValue
     private Long id;
-    private String image;
+    private String imageSource;
     private String title;
     private String recordLabel;
     @JsonIgnore
@@ -22,8 +22,8 @@ public class Album {
     protected Album() {
     }
 
-    public Album(String title, Artist artist, String recordLabel, String image) {
-        this.image = image;
+    public Album(String title, Artist artist, String recordLabel, String imageSource) {
+        this.imageSource = imageSource;
         this.artist = artist;
         this.title = title;
         this.recordLabel = recordLabel;
@@ -33,8 +33,8 @@ public class Album {
       return id;
     }
 
-    public String getImage() {
-        return image;
+    public String getImageSource() {
+        return imageSource;
     }
 
     public String getTitle() {
