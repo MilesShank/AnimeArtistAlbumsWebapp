@@ -30,8 +30,9 @@ public class ArtistController {
     }
 
     @PostMapping("/api/artists/add/")
-    public Artist createNewArtist(@RequestBody Artist artist){
-        return artistStorage.save(artist);
+    public Collection <Artist> createNewArtist(@RequestBody Artist artist){
+        artistStorage.save(artist);
+        return artistStorage.retrieveAllArtists();
     }
 
     @PatchMapping("/api/artist/{artistId}/addAlbum/")
