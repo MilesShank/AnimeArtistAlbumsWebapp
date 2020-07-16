@@ -4,7 +4,14 @@ export {
 
 import {
   fetchArtists
-}from "./fetchArtists.js"
+}from "../fetchArtists.js"
+import{
+  clearElementChildren
+}from "../domHelper.js"
+
+import{
+  displayOneArtist
+}from "./displayOneArtist.js"
 
 const displayAllArtists = (ulContainer, artists) => {
   clearElementChildren(ulContainer);
@@ -27,15 +34,8 @@ const displayAllArtists = (ulContainer, artists) => {
   };
 }
 
-const displayOneArtist = (artistContainer, artist) =>{
-  
-}
 
-const clearElementChildren = element => {
-  while (element.firstChild) {
-    element.firstChild.remove();
-  }
-}
+
 
 const allArtistsContainer = document.querySelector(".all-artists-container")
 const ulSection = document.createElement("ul");

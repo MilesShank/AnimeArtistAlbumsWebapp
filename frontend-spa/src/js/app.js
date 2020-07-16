@@ -8,7 +8,7 @@ import {
 
 import {
     displayAllArtists
-}from "./displayAllArtists.js"
+}from "./components/displayAllArtists.js"
 
 import{
     createSubHeader
