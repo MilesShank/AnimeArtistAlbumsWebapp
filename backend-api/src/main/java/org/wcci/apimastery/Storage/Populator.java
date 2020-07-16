@@ -24,19 +24,19 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String...args) throws Exception {
-        Artist artist1= new Artist("Asian Kung-Fu Generation", "Naruto Artist", "Kioon Record Label", "./artists-albums-and-songs-naruto-theme-jpg/frontend-spa/src/images/naruto-artist.jpg");
-        Artist artist2= new Artist("Yoko Kono", "Composer for the Cowboy Bebop Soundtrack", "Victor Entertainment", "./artists-albums-and-songs-naruto-theme-jpg/frontend-spa/src/images/cowboy-artist.jpg");
-        Artist artist3= new Artist("Mika Nakashima", "Singer for Kiss Of Death, Darling in the Franxx OP", "Sony Music Entertainment", "./artists-albums-and-songs-naruto-theme-jpg/frontend-spa/src/images/darling-artist.jpg");
-        Artist artist4= new Artist("Nightmare", "Band for the DeathNote OP", "Nippon Crown","./artists-albums-and-songs-naruto-theme-jpg/frontend-spa/src/images/deathnote-artist.jpg");
+        Artist artist1= new Artist("Asian Kung-Fu Generation", "Naruto Artist", "Kioon Record Label", "src/images/naruto-artist.jpg");
+        Artist artist2= new Artist("Yoko Kanno", "Composer for the Cowboy Bebop Soundtrack", "Victor Entertainment", "src/images/cowboy-artist.jpg");
+        Artist artist3= new Artist("Mika Nakashima", "Singer for Kiss Of Death, Darling in the Franxx OP", "Sony Music Entertainment", "src/images/darling-artist.jpg");
+        Artist artist4= new Artist("Nightmare", "Band for the DeathNote OP", "Nippon Crown","src/images/deathnote-artist.jpg");
         artistStorage.save(artist1);
         artistStorage.save(artist2);
         artistStorage.save(artist3);
         artistStorage.save(artist4);
 
-        Album narutoAlbum= new Album("Naruto Album", artist1, "Kioon", "./artists-albums-and-songs-naruto-theme-jpg/frontend-spa/src/images/naruto-image.jpg");
-        Album cowboyAlbum= new Album("Cowboy Bebop", artist2, "Victor Entertainment", "./artists-albums-and-songs-naruto-theme-jpg/frontend-spa/src/images/cowboy-image.jpg");
-        Album darlingAlbum= new Album("Kiss of Death", artist3, "Sony Music Entertainment Japan", "./artists-albums-and-songs-naruto-theme-jpg/frontend-spa/src/images/darling-image.jpg");
-        Album deathnoteAlbum= new Album("The WORLD", artist4, "Nippon Crown", "./artists-albums-and-songs-naruto-theme-jpg/frontend-spa/src/images/deathnote-image.jpg");
+        Album narutoAlbum= new Album("Naruto Album", artist1, "Kioon", "src/images/naruto-image.jpg");
+        Album cowboyAlbum= new Album("Cowboy Bebop", artist2, "Victor Entertainment", "src/images/cowboy-image.jpg");
+        Album darlingAlbum= new Album("Kiss of Death", artist3, "Sony Music Entertainment Japan", "src/images/darling-image.jpg");
+        Album deathnoteAlbum= new Album("The WORLD", artist4, "Nippon Crown", "src/images/deathnote-image.jpg");
         albumStorage.save(narutoAlbum);
         albumStorage.save(cowboyAlbum);
         albumStorage.save(darlingAlbum);

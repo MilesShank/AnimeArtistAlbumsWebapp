@@ -6,71 +6,29 @@ import {
   fetchArtists
 }from "./fetchArtists.js"
 
-const displayAllArtists = (element, artists) => {
-  clearElementChildren(element);
+const displayAllArtists = (ulContainer, artists) => {
+  clearElementChildren(ulContainer);
   for (let i = 0; i < artists.length; i++) {
-    const ulSection = document.createElement("ul");
-    ulSection.classList.add('artists');
-    ulSection.innerHTML = `
+    const liSection = document.createElement("li");
+    liSection.classList.add('artist');
+    liSection.innerHTML = `
     <p>${artists[i].name}</p>
     `;
-  }
- 
-    `
-    <container class="all-artists-container">
-      <ul id = all-artists-ul> 
-      <li>
-      <a href="./artist-template.html">
-         <p>Naruto Artist</p>
-         <img class="artist-art" src="src/images/naruto-artist.jpg" />
-       </a> 
-     </li>
-     <li>
-       <a href="./artist-template.html">
-         <p>DeathNote Artist</p>
-         <img class="artist-art" src="src/images/deathnote-artist.jpg" />
-       </a>
-     </li>
-     <li>
-       <a href="./artist-template.html">
-         <p>Darling in the Franxx Artist</p>
-         <img class="artist-art" src="src/images/darling-artist.jpg" />
-       </a>
-     </li>
-     <li>
-       <a href="./artist-template.html">
-         <p>Cowboy Bebop Artist</p>
-         <img class="artist-art" src="src/images/cowboy-artist.jpg" />
-       </a>
-     </li>
-     
-    </ul>
+    const artistImg = new Image;
+    artistImg.src = artists[i].imageSource;
+    artistImg.classList.add("artist-art");
+    liSection.appendChild(artistImg);
+    liSection.addEventListener('click',() =>{
+      alert("you clicked on " + artists[i].name);
+      displayOneArtist(allArtistsContainer, artists[i]);
+    })
 
-    </container>
-    `
-    // const allArtistsUl = document.querySelector ('#all-artists-ul')
-    // const li = document.createElement ('li')
-    
-    // function appendArtist(){
-    //   for (i=0; i<fetchArtists.length; i++){
-    //     let oneArtist =  json[i]
-    //     let createdArtist = createArtist(oneArtist)
-    //     allArtistsUl.appendChild(createdArtist)
-    //   }
-    // }
+    ulSection.appendChild(liSection);
+  };
+}
 
-    // function createArtist(oneArtist){
-    //   li.textContent =  naruto
- 
-    //     // <a href="./artist-template.html">
-    //     //  <p>${oneArtist.name}</p>
-    //     //  <img class="artist-art" src= "${oneArtist.imageSource}" />
-    //     // </a>
-         
-    //     return li
-    // }
-
-    return ulSection
+const displayOneArtist = (artistContainer, artist) =>{
+  
 }
 
 const clearElementChildren = element => {
@@ -79,10 +37,12 @@ const clearElementChildren = element => {
   }
 }
 
-const catalog = document.querySelector(".catalog")
+const allArtistsContainer = document.querySelector(".all-artists-container")
+const ulSection = document.createElement("ul");
+allArtistsContainer.appendChild(ulSection);
 fetchArtists()
   .then(artists => {
     console.log(artists);
-    renderAllArtists(catalog, artists)
+    displayAllArtists(ulSection, artists)
   })
 
