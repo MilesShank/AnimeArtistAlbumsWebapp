@@ -17,7 +17,7 @@ import{
 fetchArtists()
     .then(artists => renderPage(artists))
     
-    console.log (fetchArtists())
+    // console.log (fetchArtists())
 
 const renderPage = (mainPageDisplay) => {
     const container = document.querySelector('.container');
