@@ -38,5 +38,26 @@ const displayOneAlbum = (artistContainer, album) =>{
         li.innerHTML= `<p>${song.songTitle}</p>`
         ol.append(li)
     });
+
+    const albumDetails = document.createElement("section")
+    albumDetails.classList.add("album-details")  
+    artistInfo.append(albumDetails) 
+    // const ul2 = document.createElement("ul")
+    // albumDetails.append(ul2)
+    // ul2.innerHTML = `<strong><li>${album.recordLabel}</li>
+    // <li>${album.rating}</li> </strong> `
+    albumDetails.innerHTML = `
+    <ul>
+    <strong>
+    <li>${album.recordLabel}</li>
+    <li>${album.rating}</li>
+    <li>${album.artist}</li>
+     </strong>
+     </ul> 
+     <span class="album-description"> ${album.description}</span> `
+
+
+
+
     div.append(ol)
 }

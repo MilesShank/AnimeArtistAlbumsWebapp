@@ -33,10 +33,10 @@ public class Populator implements CommandLineRunner {
         artistStorage.save(artist3);
         artistStorage.save(artist4);
 
-        Album narutoAlbum= new Album("Naruto Album", artist1, "Kioon", "src/images/naruto-image.jpg");
-        Album cowboyAlbum= new Album("Cowboy Bebop", artist2, "Victor Entertainment", "src/images/cowboy-image.jpg");
-        Album darlingAlbum= new Album("Kiss of Death", artist3, "Sony Music Entertainment Japan", "src/images/darling-image.jpg");
-        Album deathnoteAlbum= new Album("The WORLD", artist4, "Nippon Crown", "src/images/deathnote-image.jpg");
+        Album narutoAlbum= new Album("Naruto Album", artist1, "Kioon","Naruto Album Description","10/5", "src/images/naruto-image.jpg");
+        Album cowboyAlbum= new Album("Cowboy Bebop", artist2, "Victor Entertainment", "Cowboy Album Description", "10/5", "src/images/cowboy-image.jpg");
+        Album darlingAlbum= new Album("Kiss of Death", artist3, "Sony Music Entertainment Japan", "Darling Album Description", "10/5", "src/images/darling-image.jpg");
+        Album deathnoteAlbum= new Album("The WORLD", artist4, "Nippon Crown","Deathnote Album Description", "10/5", "src/images/deathnote-image.jpg");
         albumStorage.save(narutoAlbum);
         albumStorage.save(cowboyAlbum);
         albumStorage.save(darlingAlbum);
