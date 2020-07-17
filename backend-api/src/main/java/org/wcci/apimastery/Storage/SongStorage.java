@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service;
 import org.wcci.apimastery.Entities.Song;
 import org.wcci.apimastery.Repositories.SongRepository;
 
+import java.util.Collection;
+
 @Service
 public class SongStorage {
 
@@ -14,6 +16,10 @@ public class SongStorage {
 
     public Song retrieveSongById(long id) {
         return songRepo.findById(id).get();
+    }
+
+    public Collection<Song> retrieveAllSongs() {
+        return (Collection<Song>)songRepo.findAll();
     }
 
     public Song save(Song song) {
