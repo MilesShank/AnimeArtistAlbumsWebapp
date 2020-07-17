@@ -42,17 +42,14 @@ public class Populator implements CommandLineRunner {
         albumStorage.save(darlingAlbum);
         albumStorage.save(deathnoteAlbum);
 
-        Song narutoSong= new Song("Haruka Kanata", "https://www.youtube.com/watch?v=nJ6A6GC_ki4", "4:06");
-        Song cowboySong= new Song("Tank","https://www.youtube.com/watch?v=n2rVnRwW0h8", "3:31");
-        Song darlingSong= new Song("Kiss of Death", "https://www.youtube.com/watch?v=mzJqxT1UGho", "4:10");
-        Song deathnoteSong= new Song("The WORLD", "https://www.youtube.com/watch?v=btD61Bq0XJo", "3:37");
+        Song narutoSong= new Song(artist1, narutoAlbum, "Haruka Kanata", "https://www.youtube.com/watch?v=nJ6A6GC_ki4", "4:06");
+        Song cowboySong= new Song(artist2, cowboyAlbum,"Tank","https://www.youtube.com/watch?v=n2rVnRwW0h8", "3:31");
+        Song darlingSong= new Song(artist3, darlingAlbum,"Kiss of Death", "https://www.youtube.com/watch?v=mzJqxT1UGho", "4:10");
+        Song deathnoteSong= new Song(artist4, deathnoteAlbum,"The WORLD", "https://www.youtube.com/watch?v=btD61Bq0XJo", "3:37");
         songStorage.save(narutoSong);
         songStorage.save(cowboySong);
         songStorage.save(darlingSong);
         songStorage.save(deathnoteSong);
-
-
-
     }
 
 }

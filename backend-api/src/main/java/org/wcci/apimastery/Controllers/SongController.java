@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.wcci.apimastery.Entities.Song;
 import org.wcci.apimastery.Storage.SongStorage;
 
+import java.util.Collection;
+
 @RestController
 public class SongController {
 
@@ -20,5 +22,10 @@ public class SongController {
     @GetMapping("/api/song/{id}/")
     public Song retrieveSongById(@PathVariable long id){
         return songStorage.retrieveSongById(id);
+    }
+
+    @GetMapping("/api/songs/")
+    public Collection<Song> retrieveAllSongs(){
+        return songStorage.retrieveAllSongs();
     }
 }

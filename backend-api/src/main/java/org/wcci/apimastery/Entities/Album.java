@@ -16,7 +16,7 @@ public class Album {
     @JsonIgnore
     @ManyToOne
     private Artist artist;
-    @OneToMany
+    @OneToMany(mappedBy = "album", orphanRemoval = true)
     private Collection<Song> songs;
 
     protected Album() {

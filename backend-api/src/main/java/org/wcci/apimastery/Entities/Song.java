@@ -1,6 +1,9 @@
 package org.wcci.apimastery.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 public class Song {
@@ -10,12 +13,16 @@ public class Song {
     private String songTitle;
     private String songLink;
     private String songDuration;
+    @JsonIgnore
     @ManyToOne
-    private Album albums;
+    private Album album;
+    @JsonIgnore
     @ManyToOne
-    private Artist artists;
+    private Artist artist;
 
-    public Song(String songTitle, String songLink, String songDuration) {
+    public Song(Artist artist, Album album, String songTitle, String songLink, String songDuration) {
+        this.artist = artist;
+        this.album = album;
         this.songTitle = songTitle;
         this.songLink = songLink;
         this.songDuration = songDuration;
@@ -39,11 +46,12 @@ public class Song {
         return songDuration;
     }
 
-    public Album getAlbums() {
-        return albums;
+    public Album getAlbum() {
+        return album;
     }
 
-    public Artist getArtists() {
-        return artists;
+    public Artist getArtist() {
+        return artist;
     }
+
 }
