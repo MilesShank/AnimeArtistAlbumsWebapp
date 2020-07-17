@@ -11,7 +11,7 @@ public class Song {
     private String songLink;
     private String songDuration;
     @ManyToOne
-    private Album albums;
+    private Album album;
     @ManyToOne
     private Artist artists;
 
@@ -39,8 +39,8 @@ public class Song {
         return songDuration;
     }
 
-    public Album getAlbums() {
-        return albums;
+    public Album getAlbum() {
+        return album;
     }
 
     public Artist getArtists() {
