@@ -11,16 +11,14 @@ import{
   displayOneArtist
 }from "./displayOneArtist.js"
 
-const displayAllArtists = (element, artists) => {
-  clearElementChildren(element);
+const displayAllArtists = (artists) => {
+  clearElementChildren(allArtistsContainer);
   const ulSection = document.createElement("ul");
-  element.appendChild(ulSection);
+  allArtistsContainer.appendChild(ulSection);
   for (let i = 0; i < artists.length; i++) {
     const liSection = document.createElement("li");
     liSection.classList.add('artist');
-    liSection.innerHTML = `
-    <p>${artists[i].name}</p>
-    `;
+    liSection.innerHTML = ` <p>${artists[i].name}</p> `;
     const artistImg = new Image;
     artistImg.src = artists[i].imageSource;
     artistImg.classList.add("artist-art");
@@ -72,6 +70,10 @@ function drawArtistForm(allArtistsContainer) {
       "imageSource": artistImageInput.value
     }
     postNewArtist(artist)
+          .then(artists => {
+        displayAllArtists(allArtistsContainer, artists)
+          })
+    fetchArtists()
       .then(artists => {
         displayAllArtists(allArtistsContainer, artists)
       })
@@ -80,9 +82,3 @@ function drawArtistForm(allArtistsContainer) {
 
 
 const allArtistsContainer = document.querySelector(".all-artists-container")
-fetchArtists()
-  .then(artists => {
-    console.log(artists);
-    displayAllArtists(allArtistsContainer, artists)
-  })
-
