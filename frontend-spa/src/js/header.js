@@ -2,7 +2,7 @@ export {
      createHeader
 }
 
-const createHeader = (artist) => {
+const createHeader = () => {
     const header = document.createElement("header");
     header.classList.add('header')
     header.innerHTML = `

@@ -19,11 +19,12 @@ fetchArtists()
     
     // console.log (fetchArtists())
 
-const renderPage = (mainPageDisplay) => {
+const renderPage = (artists) => {
     const container = document.querySelector('.container');
 
-    container.prepend(createHeader(mainPageDisplay))
-    container.appendChild(createSubHeader(mainPageDisplay))
-    container.appendChild(displayAllArtists(mainPageDisplay))
+    container.prepend(createHeader(artists))
+    container.append(createSubHeader(artists))
+   // container.append(displayAllArtists(artists))
+   displayAllArtists(artists)
     
 }

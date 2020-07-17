@@ -4,6 +4,7 @@ export{
 import{
     clearElementChildren
 }from "../domHelper.js"
+
 const displayOneArtist = (artistContainer, artist) =>{
 clearElementChildren(artistContainer);
 artistContainer.classList.remove("all-artists-container");
