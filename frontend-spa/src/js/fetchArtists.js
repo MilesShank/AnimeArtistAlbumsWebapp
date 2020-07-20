@@ -1,12 +1,13 @@
 export {
-    fetchArtists
-}
-export {
-    postNewArtist
+    fetchArtists, postNewAlbum, postNewArtist, fetchAlbums
 }
 
 const fetchArtists = async () => {
     return fetch('http://localhost:8080/api/artists/')
+    .then(response => response.json())
+}
+const fetchAlbums = async () => {
+    return fetch('http://localhost:8080/api/albums/')
     .then(response => response.json())
 }
 
@@ -19,4 +20,16 @@ const postNewArtist = async (artist) => {
         },
         body: JSON.stringify(artist)
     }) .then(response => response.json())
+}
+
+const postNewAlbum = async (album) => {
+    console.log(album);
+    return fetch(`http://localhost:8080/api/artist/2/addAlbum/`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(album)
+    })  .then(response => response.json())
+    
 }

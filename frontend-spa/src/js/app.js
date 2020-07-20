@@ -3,7 +3,7 @@ import {
 }from "./header.js"
 
 import {
-    fetchArtists
+    fetchArtists, fetchAlbums
 }from "./fetchArtists.js"
 
 import {
@@ -15,8 +15,7 @@ import{
 }from "./subHeader.js"
 
 fetchArtists()
-    .then(artists => renderPage(artists))
-    
+    .then(artists => renderPage(artists))    
     // console.log (fetchArtists())
 
 const renderPage = (artists) => {

@@ -13,6 +13,8 @@ public class Album {
     private String imageSource;
     private String title;
     private String recordLabel;
+    @Column(length = 100000)
+    @Lob
     private String description;
     private String rating;
     @JsonIgnore
