@@ -4,6 +4,9 @@ export{
 import{
     clearElementChildren
 }from "../domHelper.js"
+import{
+    displayOneAlbum
+}from "./displayOneAlbum.js"
 
 const displayOneArtist = (artistContainer, artist) =>{
 clearElementChildren(artistContainer);
@@ -42,7 +45,6 @@ albumArt.classList.add("album-art");
 albumArt.src = album.imageSource;
 li.appendChild(albumArt);
 li.addEventListener('click',() =>{
-    alert(`you clicked on ${album.title}`)
     displayOneAlbum(artistContainer,album);
 })
 albumUl.appendChild(li);

@@ -13,6 +13,8 @@ public class Album {
     private String imageSource;
     private String title;
     private String recordLabel;
+    private String description;
+    private String rating;
     @JsonIgnore
     @ManyToOne
     private Artist artist;
@@ -22,15 +24,25 @@ public class Album {
     protected Album() {
     }
 
-    public Album(String title, Artist artist, String recordLabel, String imageSource) {
+    public Album(String title, Artist artist, String recordLabel,String description, String rating, String imageSource) {
         this.imageSource = imageSource;
         this.artist = artist;
         this.title = title;
         this.recordLabel = recordLabel;
+        this.description = description;
+        this.rating = rating;
     }
 
     public Long getId() {
       return id;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getRating() {
+        return rating;
     }
 
     public String getImageSource() {
