@@ -24,12 +24,15 @@ public class AlbumController {
     public Album retrieveAlbumById(@PathVariable long id){
         return albumStorage.retrieveAlbumById(id);
     }
+
     @DeleteMapping("/api/album/{id}/")
     public Collection<Album> deleteAlbum(@PathVariable long id){
         albumStorage.delete(id);
         return albumStorage.retrieveAllAlbums();
-
     }
-
-
+    @PostMapping("/api/album/add/")
+    public Collection<Album> createAlbum(@RequestBody Album album){
+        albumStorage.save(album);
+        return albumStorage.retrieveAllAlbums();
+    }
 }

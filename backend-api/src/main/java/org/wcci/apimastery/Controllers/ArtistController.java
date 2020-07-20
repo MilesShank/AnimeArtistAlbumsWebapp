@@ -7,7 +7,7 @@ import org.wcci.apimastery.Entities.Album;
 import org.wcci.apimastery.Entities.Artist;
 
 import java.util.Collection;
-
+@CrossOrigin
 @RestController
 public class ArtistController {
 
@@ -35,9 +35,9 @@ public class ArtistController {
         return artistStorage.retrieveAllArtists();
     }
 
-    @PatchMapping("/api/artist/{artistId}/addAlbum/")
-    public Artist addAlbumToArtist(@PathVariable long artistId, @RequestBody Album album){
-        Artist artist = artistStorage.retrieveArtistById(artistId);
+    @PatchMapping("/api/artist/{id}/addAlbum/")
+    public Artist addAlbumToArtist(@PathVariable long id, @RequestBody Album album){
+        Artist artist = artistStorage.retrieveArtistById(id);
         Album albumToAdd = new Album(album.getTitle(), artist, album.getDescription(), album.getRating(), album.getRecordLabel(), album.getImageSource());
         albumStorage.save(albumToAdd);
         return albumToAdd.getArtist();
