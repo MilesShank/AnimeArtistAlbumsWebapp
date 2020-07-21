@@ -38,29 +38,29 @@ function drawArtistForm(allArtistsContainer) {
   inputContainer.classList.add('input-container');
   const artistNameInput = document.createElement('input');
   artistNameInput.type = 'text';
-  artistNameInput.placeholder = 'Enter new artist name';
+  artistNameInput.placeholder = ' New Artist Name';
   artistNameInput.classList.add('input-box');
   inputContainer.appendChild(artistNameInput);
   const artistDescriptionInput = document.createElement('input');
   artistDescriptionInput.type = 'text';
-  artistDescriptionInput.placeholder = 'Enter new artist description';
+  artistDescriptionInput.placeholder = ' New Artist description';
   artistDescriptionInput.classList.add('input-box');
   inputContainer.appendChild(artistDescriptionInput);
   const artistRecordLabelInput = document.createElement('input');
   artistRecordLabelInput.type = 'text';
-  artistRecordLabelInput.placeholder = 'Enter new artist record label';
+  artistRecordLabelInput.placeholder = ' New Record Label';
   artistRecordLabelInput.classList.add('input-box');
   inputContainer.appendChild(artistRecordLabelInput);
   const artistImageInput = document.createElement('input');
   artistImageInput.type = 'text';
-  artistImageInput.placeholder = 'Enter image url';
+  artistImageInput.placeholder = ' New Artist Image URL';
   artistImageInput.classList.add('input-box');
   inputContainer.appendChild(artistImageInput);
   const submitButton = document.createElement('button');
-  submitButton.innerText = 'Submit New Artist';
+  submitButton.innerText = 'Add New Artist';
   submitButton.classList.add('input-box-submit');
   inputContainer.appendChild(submitButton);
-  allArtistsContainer.appendChild(inputContainer);
+  allArtistsContainer.prepend(inputContainer);
 
   submitButton.addEventListener('click', () => {
     const artist = {
