@@ -4,9 +4,9 @@ import { displayOneAlbum } from "./displayOneAlbum.js";
 import { fetchArtists, postNewAlbum, fetchAlbums } from "../fetchArtists.js";
 
 
-const displayOneArtist = (artistContainer, artist) => {
-  clearElementChildren(artistContainer);
-  artistContainer.classList.remove("all-artists-container");
+const displayOneArtist = (allArtistsContainer, artist) => {
+  clearElementChildren(allArtistsContainer);
+  const artistContainer = document.createElement("container")
   artistContainer.classList.add("artist-container");
   const artistInfo = document.createElement("section");
   artistInfo.classList.add("artist-info");
@@ -44,6 +44,7 @@ const displayOneArtist = (artistContainer, artist) => {
     albumUl.appendChild(li);
   });
   artistContainer.appendChild(albumUl);
+  allArtistsContainer.append(artistContainer);
   drawAlbumForm(artistContainer);
 
   function drawAlbumForm(artistContainer) {
@@ -84,7 +85,7 @@ const displayOneArtist = (artistContainer, artist) => {
     submitButton.innerText = "Submit New Album";
     submitButton.classList.add("input-box-submit");
     inputContainer.appendChild(submitButton);
-    artistContainer.prepend(inputContainer);
+    allArtistsContainer.prepend(inputContainer);
 
     submitButton.addEventListener("click", () => {
       const album = {
