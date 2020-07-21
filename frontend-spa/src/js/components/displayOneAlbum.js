@@ -1,7 +1,9 @@
 import { 
     clearElementChildren 
 } from "../domHelper.js"
-
+import {
+    displayOneSong
+} from "./displayOneSong.js"
 export {
     displayOneAlbum
 }
@@ -37,6 +39,9 @@ const displayOneAlbum = (artistContainer, album) =>{
         const li = document.createElement("li")
         li.innerHTML= `<p>${song.songTitle}</p>`
         ol.append(li)
+        li.addEventListener("click", () => {
+            displayOneSong(artistContainer, song, album);
+          });
     });
 
     const albumDetails = document.createElement("section")
