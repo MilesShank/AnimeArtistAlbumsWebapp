@@ -22,9 +22,9 @@ const postNewArtist = async (artist) => {
     }) .then(response => response.json())
 }
 
-const postNewAlbum = async (album) => {
+const postNewAlbum = async (album, artistId) => {
     console.log(album);
-    return fetch(`http://localhost:8080/api/artist/2/addAlbum/`, {
+    return fetch(`http://localhost:8080/api/artist/${artistId}/addAlbum/`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json"

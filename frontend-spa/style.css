@@ -135,7 +135,15 @@ iframe{
     justify-content: space-between;
     column-gap: 1em;
     grid-template-columns: 1fr 1fr 1fr;
- 
+}
+.input-box-submit{
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.input-container{
+    display:flex;
+    justify-content: center;
+    margin: 1em;
 }
 nav{
     background-color: var(--color-1);
@@ -187,6 +195,9 @@ nav ul{
 .song-details li{
     display:flex;
     padding: 1em;
+}
+.sub-header {
+    margin-top: 1em;
 }
 .title{
     font-weight: 200;

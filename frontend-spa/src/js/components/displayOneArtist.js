@@ -2,7 +2,7 @@ export { displayOneArtist };
 import { clearElementChildren } from "../domHelper.js";
 import { displayOneAlbum } from "./displayOneAlbum.js";
 import { fetchArtists, postNewAlbum, fetchAlbums } from "../fetchArtists.js";
-import { displayAllArtists } from "./displayAllArtists.js";
+
 
 const displayOneArtist = (artistContainer, artist) => {
   clearElementChildren(artistContainer);
@@ -11,14 +11,13 @@ const displayOneArtist = (artistContainer, artist) => {
   const artistInfo = document.createElement("section");
   artistInfo.classList.add("artist-info");
   artistInfo.innerHTML = `
-<div class="artist-grid">
-<ul>
-<li><h2>${artist.name}</h2></li>
-<li>${artist.description}</li>
-<li>${artist.recordLabel}</li>
-</ul>
-</div>
-`;
+   <div class="artist-grid">
+   <ul>
+   <li><h2>${artist.name}</h2></li>
+   <li>${artist.description}</li>
+   <li>${artist.recordLabel}</li>
+   </ul>
+   </div>`;
 
   const artistGridItem2 = document.createElement("div");
   artistGridItem2.classList.add("artist-grid-item2");
@@ -85,7 +84,7 @@ const displayOneArtist = (artistContainer, artist) => {
     submitButton.innerText = "Submit New Album";
     submitButton.classList.add("input-box-submit");
     inputContainer.appendChild(submitButton);
-    artistContainer.appendChild(inputContainer);
+    artistContainer.prepend(inputContainer);
 
     submitButton.addEventListener("click", () => {
       const album = {
@@ -97,10 +96,10 @@ const displayOneArtist = (artistContainer, artist) => {
         imageSource: albumImageInput.value,
       };
       console.log(album);
-      postNewAlbum(album).then((artist) => {
-          console.log(artist)
-        displayOneArtist(artistContainer, artist);
+      postNewAlbum(album, artist.id).then((updatedArtist) => {
+          console.log(updatedArtist)
+        displayOneArtist(artistContainer, updatedArtist);
       });
     });
   }
-};
+}
