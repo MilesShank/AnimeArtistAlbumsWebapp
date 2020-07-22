@@ -71,11 +71,11 @@ function drawArtistForm(allArtistsContainer) {
     }
     postNewArtist(artist)
           .then(artists => {
-        displayAllArtists(allArtistsContainer, artists)
+        displayAllArtists(artists)
           })
     fetchArtists()
       .then(artists => {
-        displayAllArtists(allArtistsContainer, artists)
+        displayAllArtists( artists)
       })
   })
 }

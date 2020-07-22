@@ -1,7 +1,8 @@
 export { displayOneArtist };
 import { clearElementChildren } from "../domHelper.js";
 import { displayOneAlbum } from "./displayOneAlbum.js";
-import { fetchArtists, postNewAlbum, fetchAlbums } from "../fetchArtists.js";
+import { fetchArtists, postNewAlbum, fetchAlbums,deleteArtist } from "../fetchArtists.js";
+import { displayAllArtists } from "./displayAllArtists.js";
 
 
 const displayOneArtist = (allArtistsContainer, artist) => {
@@ -87,6 +88,18 @@ const displayOneArtist = (allArtistsContainer, artist) => {
     inputContainer.appendChild(submitButton);
     allArtistsContainer.prepend(inputContainer);
 
+    const deleteButton = document.createElement("button");
+    deleteButton.innerText = "X Delete Artist";
+    deleteButton.classList.add("delete-box-submit");
+    allArtistsContainer.appendChild(deleteButton);
+    
+    deleteButton.addEventListener ("click", ()=>{
+       deleteArtist(artist,artist.id).then((updatedArtistList)=>{
+         console.log(updatedArtistList)
+         displayAllArtists(updatedArtistList);
+       } );
+    })
+
     submitButton.addEventListener("click", () => {
       const album = {
         artist: artist.id,
@@ -96,10 +109,11 @@ const displayOneArtist = (allArtistsContainer, artist) => {
         rating: albumRatingInput.value,
         imageSource: albumImageInput.value,
       };
+
       console.log(album);
       postNewAlbum(album, artist.id).then((updatedArtist) => {
           console.log(updatedArtist)
-        displayOneArtist(artistContainer, updatedArtist);
+        displayOneArtist(allArtistsContainer, updatedArtist);
       });
     });
   }
