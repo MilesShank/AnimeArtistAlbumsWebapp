@@ -1,6 +1,7 @@
 package org.wcci.apimastery.Storage;
 
 import org.springframework.stereotype.Service;
+import org.wcci.apimastery.Entities.Album;
 import org.wcci.apimastery.Entities.Artist;
 import org.wcci.apimastery.Repositories.ArtistRepository;
 
@@ -30,4 +31,5 @@ public class ArtistStorage {
     public Artist retrieveArtistById(long id) {
         return artistRepo.findById(id).get();
     }
+    
 }

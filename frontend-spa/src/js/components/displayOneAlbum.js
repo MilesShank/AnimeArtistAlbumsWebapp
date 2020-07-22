@@ -4,6 +4,12 @@ import {
 import {
     displayOneSong
 } from "./displayOneSong.js"
+import {
+    deleteAlbum, fetchArtists
+} from "../fetchArtists.js"
+import {
+    displayAllArtists
+} from "./displayAllArtists.js"
 export {
     displayOneAlbum
 }
@@ -59,5 +65,18 @@ const displayOneAlbum = (artistContainer, album) =>{
 
     div.append(ol)
 
+    const deleteButton = document.createElement("button");
+    deleteButton.innerText = "X Delete Album";
+    deleteButton.classList.add("delete-box-submit");
+    artistContainer.appendChild(deleteButton);
+    
+    deleteButton.addEventListener ("click", ()=>{
+       deleteAlbum(album,album.id).then((updatedAlbumList)=>{
+        fetchArtists()
+        .then(artists => {
+            displayAllArtists(artists)
+        })
 
+       } );
+    })
 }

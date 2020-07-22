@@ -5,7 +5,7 @@ import org.wcci.apimastery.Storage.AlbumStorage;
 import org.wcci.apimastery.Entities.Album;
 
 import java.util.Collection;
-
+@CrossOrigin
 @RestController
 public class AlbumController {
 
