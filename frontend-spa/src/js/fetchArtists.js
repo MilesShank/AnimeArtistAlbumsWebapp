@@ -1,3 +1,4 @@
+
 export { fetchArtists, postNewAlbum, postNewArtist, fetchAlbums, deleteArtist, deleteAlbum };
 
 const fetchArtists = async () => {
@@ -43,6 +44,7 @@ const deleteArtist = async (artist, artistId) => {
     body: JSON.stringify(artist),
   }).then((response) => response.json());
 };
+
 
 const deleteAlbum = async (album, albumId) => {
   return fetch(`http://localhost:8080/api/album/${albumId}/`, {
