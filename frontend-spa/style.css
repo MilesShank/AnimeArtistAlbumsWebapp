@@ -199,6 +199,22 @@ nav ul{
     grid-template-columns: 1fr 1fr;
     background-color:var(--color-5);
 }
+.songData {
+    background-color: var(--color-5);
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-around;
+    text-align:left;
+    margin: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+
+.songSection ul:nth-child(2n){
+    background-color: bisque;
+
+}
 .song-details{
     background-color: var(--color-5);
 }
