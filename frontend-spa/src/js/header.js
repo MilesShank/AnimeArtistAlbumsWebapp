@@ -3,13 +3,16 @@ export {
 }
 
 import {
-  fetchArtists
+  fetchArtists, fetchAlbums
 } from "./fetchArtists.js"
 
 import {
   displayAllArtists
 } from "./components/displayAllArtists.js"
 
+import {
+  displayAllAlbums
+}from "./components/displayAllAlbums.js"
 
 const createHeader = () => {
     const header = document.createElement("header");
@@ -39,6 +42,15 @@ const createHeader = () => {
     liHome.addEventListener('click', () => {
       fetchArtists()
         .then(artists => displayAllArtists(artists)) 
+    })
+    const liAlbum = document.createElement("li");
+    liAlbum.classList.add("liAlbum");
+    liAlbum.innerHTML = `Albums`
+    ulHeader.appendChild(liAlbum);
+    liAlbum.addEventListener('click', () => {
+      alert("Boom Boom")
+      fetchAlbums()
+        .then(albums => displayAllAlbums(document.querySelector(".all-artists-container"), albums)) 
     })
 
     return header;
