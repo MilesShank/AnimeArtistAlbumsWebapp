@@ -1,4 +1,5 @@
-export { fetchArtists, postNewAlbum, postNewArtist, fetchAlbums, deleteArtist };
+
+export { fetchArtists, postNewAlbum, postNewArtist, fetchAlbums, deleteArtist, deleteAlbum };
 
 const fetchArtists = async () => {
   return fetch("http://localhost:8080/api/artists/").then((response) =>
@@ -41,5 +42,16 @@ const deleteArtist = async (artist, artistId) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(artist),
+  }).then((response) => response.json());
+};
+
+
+const deleteAlbum = async (album, albumId) => {
+  return fetch(`http://localhost:8080/api/album/${albumId}/`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(album),
   }).then((response) => response.json());
 };
