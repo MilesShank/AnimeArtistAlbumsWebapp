@@ -16,6 +16,9 @@ import {
 
 const displayAllAlbums = (allAlbumsContainer, albums) => {
     clearElementChildren(allAlbumsContainer);
+    allAlbumsContainer.classList.remove(`all-songs-container`);
+    allAlbumsContainer.classList.remove(`song-container`);
+    allAlbumsContainer.classList.add("all-artists-container");
     allAlbumsContainer.classList.add("all-albums-container");
     const ulSection = document.createElement("ul");
     allAlbumsContainer.appendChild(ulSection);

@@ -34,6 +34,7 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: 'Russo One', sans-serif;
+    cursor: url(https://cur.cursors-4u.net/special/spe-2/spe114.cur), auto !important;
   }
 body{
     background-color: var(--color-2);
@@ -145,11 +146,11 @@ iframe{
     justify-content: center;
     margin: 1em;
 }
-.liHome{
+.liHome,.liAlbum,.liSongs{
     font-size: large;
     text-decoration: none;
 }
-.liHome:hover{
+.liHome:hover,.liAlbum:hover,.liSongs:hover{
     color:rgb(4, 17, 44);
     background-color:rgb(255,255,255,.7);
     border-radius: 10px;
@@ -199,21 +200,20 @@ nav ul{
     grid-template-columns: 1fr 1fr;
     background-color:var(--color-5);
 }
-.songData {
+ul.songData {
     background-color: var(--color-5);
-    display:flex;
-    flex-flow:row wrap;
-    justify-content: space-around;
-    text-align:left;
+    display:grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    justify-items: flex-start;
     margin: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
+    padding-left: 20px;
 
 }
 
 .songSection ul:nth-child(2n){
     background-color: bisque;
-
 }
 .song-details{
     background-color: var(--color-5);
@@ -246,3 +246,4 @@ ul {
     list-style: none;
     text-decoration: none;
   }
+
