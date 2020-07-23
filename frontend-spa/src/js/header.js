@@ -27,6 +27,10 @@ const createHeader = () => {
     const liTitle = document.createElement("li");
     liTitle.classList.add("title");
     liTitle.innerHTML = `NarutoTheme.jpg`;
+    const headerImg = new Image;
+    headerImg.classList.add("headerImg")
+    headerImg.src = "src/images/narutothemejpg.png"
+    liTitle.prepend(headerImg);
     ulHeader.appendChild(liTitle);
     header.append(nav);
     const liHome = document.createElement("li");
