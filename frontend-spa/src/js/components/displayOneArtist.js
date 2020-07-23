@@ -12,14 +12,27 @@ const displayOneArtist = (allArtistsContainer, artist) => {
 
   const artistInfo = document.createElement("section");
   artistInfo.classList.add("artist-info");
-  artistInfo.innerHTML = 
-    `<div class="artist-grid">
-     <ul>
-     <li><h2>${artist.name}</h2></li>
-     <li>${artist.description}</li>
-     <li>${artist.recordLabel}</li>
-     </ul>
-     </div>`;
+
+  const artistDiv = document.createElement("div")
+  artistDiv.classList.add("artist-grid")
+  artistInfo.appendChild(artistDiv)
+
+  const artistUl = document.createElement("ul")
+  artistDiv.appendChild(artistUl)
+
+  const nameLi = document.createElement("li")
+  const nameH2 = document.createElement("h2")
+  nameLi.appendChild(nameH2)
+  nameH2.innerHTML = `${artist.name}`
+  artistDiv.appendChild(nameLi)
+
+  const descriptionLi = document.createElement("li")
+  descriptionLi.innerHTML = `${artist.description}`
+  artistDiv.appendChild(descriptionLi)
+
+  const labelLi = document.createElement("li")
+  labelLi.innerHTML = ` ${artist.recordLabel}`
+  artistDiv.appendChild(labelLi)
 
   const artistGridItem2 = document.createElement("div");
   artistGridItem2.classList.add("artist-grid-item2");
@@ -58,31 +71,31 @@ const displayOneArtist = (allArtistsContainer, artist) => {
 
     const albumNameInput = document.createElement("input");
     albumNameInput.type = "text";
-    albumNameInput.placeholder = "Enter new album name";
+    albumNameInput.placeholder = " New album name";
     albumNameInput.classList.add("input-box");
     inputContainer.appendChild(albumNameInput);
 
     const albumDescriptionInput = document.createElement("input");
     albumDescriptionInput.type = "text";
-    albumDescriptionInput.placeholder = "Enter new album description";
+    albumDescriptionInput.placeholder = " New album description";
     albumDescriptionInput.classList.add("input-box");
     inputContainer.appendChild(albumDescriptionInput);
 
     const albumRecordLabelInput = document.createElement("input");
     albumRecordLabelInput.type = "text";
-    albumRecordLabelInput.placeholder = "Enter new album record label";
+    albumRecordLabelInput.placeholder = " New album record label";
     albumRecordLabelInput.classList.add("input-box");
     inputContainer.appendChild(albumRecordLabelInput);
 
     const albumRatingInput = document.createElement("input");
     albumRatingInput.type = "text";
-    albumRatingInput.placeholder = "Enter new album rating";
+    albumRatingInput.placeholder = " New album rating";
     albumRatingInput.classList.add("input-box");
     inputContainer.appendChild(albumRatingInput);
 
     const albumImageInput = document.createElement("input");
     albumImageInput.type = "text";
-    albumImageInput.placeholder = "Enter image url";
+    albumImageInput.placeholder = " Enter image url";
     albumImageInput.classList.add("input-box");
     inputContainer.appendChild(albumImageInput);
 
