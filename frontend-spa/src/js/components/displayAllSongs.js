@@ -19,7 +19,7 @@ const displayAllSongs = (allArtistsContainer,albums) =>{
         songData.innerHTML = 
           `<li>${song.songTitle}</li>
            <li>${album.title}</li>
-           <li>${song.songDuration}</li> `
+           <li>${song.songDuration}</li>`
         songSection.append(songData);
         songData.addEventListener('click', () =>{
             displayOneSong(allArtistsContainer,song,album);
