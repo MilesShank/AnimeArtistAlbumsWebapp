@@ -1,3 +1,6 @@
+export {
+    displayAllAlbums
+}
 import {
     fetchAlbums
 } from "../fetchArtists.js"
@@ -10,13 +13,13 @@ import {
     displayOneAlbum
 } from "./displayOneAlbum.js"
 
-const displayAllAlbums = (albums) => {
-    clearElementChildren(allArtistsContainer);
-    const allAlbumsContainer = document.createElement("container");
+
+const displayAllAlbums = (allAlbumsContainer, albums) => {
+    clearElementChildren(allAlbumsContainer);
     allAlbumsContainer.classList.add("all-albums-container");
     const ulSection = document.createElement("ul");
     allAlbumsContainer.appendChild(ulSection);
-    for (i = 0; i < albums.length; i++) {
+    for (let i = 0; i < albums.length; i++) {
         const liSection = document.createElement("li");
         liSection.classList.add('album');
         liSection.innerHTML = `<p>${albums[i].title}</p>`
@@ -30,9 +33,6 @@ const displayAllAlbums = (albums) => {
         })
         ulSection.appendChild(liSection);
     }
+    
 }
 
-fetchAlbums()
-    .then(albums => {
-        displayAllAlbums(allAlbumsContainer, albums)
-    })

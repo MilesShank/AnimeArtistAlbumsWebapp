@@ -55,7 +55,7 @@ public class Populator implements CommandLineRunner {
         Album deathnoteAlbum= new Album("The WORLD", artist4, "Nippon Crown","Deathnote is often referred to as a novel, rather" +
                 " than a manga. Its extremely in depth world and story is paralleled by its most popular intro 'The WORLD.'" +
                 "The lyrics to the song describe the story itself, a young man on a mission to change the world with a forbidden" +
-                " power who will stop at nothing to recreate the world in his vision. ", "10/5", "src/images/deathnote-image.jpg");
+                " power who will stop at nothing to recreate the world in his vision. ", "10/5", "src/images/deathnote.jpg");
         albumStorage.save(narutoAlbum);
         albumStorage.save(narutoAlbum2);
         albumStorage.save(cowboyAlbum);
