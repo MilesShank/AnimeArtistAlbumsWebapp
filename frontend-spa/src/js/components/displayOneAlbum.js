@@ -61,7 +61,7 @@ const displayOneAlbum = (artistContainer, album) =>{
     const deleteButton = document.createElement("button");
     deleteButton.innerText = "X Delete Album";
     deleteButton.classList.add("delete-box-submit");
-    albumDetails.appendChild(deleteButton);
+    artistContainer.appendChild(deleteButton);
     
     deleteButton.addEventListener ("click", ()=>{
        deleteAlbum(album,album.id).then((updatedAlbumList)=>{
