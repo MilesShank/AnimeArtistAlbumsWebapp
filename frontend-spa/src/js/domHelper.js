@@ -1,6 +1,4 @@
-export{
-    clearElementChildren
-}
+export{ clearElementChildren }
 
 
 const clearElementChildren = element => {

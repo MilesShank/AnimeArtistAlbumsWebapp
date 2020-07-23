@@ -6,6 +6,7 @@ const fetchArtists = async () => {
     response.json()
   );
 };
+
 const fetchAlbums = async () => {
   return fetch("http://localhost:8080/api/albums/").then((response) =>
     response.json()
