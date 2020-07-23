@@ -40,7 +40,7 @@ const displayOneArtist = (allArtistsContainer, artist) => {
     albumArt.src = album.imageSource;
     li.appendChild(albumArt);
     li.addEventListener("click", () => {
-      displayOneAlbum(artistContainer, album);
+      displayOneAlbum(allArtistsContainer, album);
     });
     albumUl.appendChild(li);
   });
@@ -91,7 +91,7 @@ const displayOneArtist = (allArtistsContainer, artist) => {
     const deleteButton = document.createElement("button");
     deleteButton.innerText = "X Delete Artist";
     deleteButton.classList.add("delete-box-submit");
-    allArtistsContainer.appendChild(deleteButton);
+    allArtistsContainer.append(deleteButton);
     
     deleteButton.addEventListener ("click", ()=>{
        deleteArtist(artist,artist.id).then((updatedArtistList)=>{
