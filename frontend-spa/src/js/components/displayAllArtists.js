@@ -14,6 +14,9 @@ import { displayAllSongs } from "./displayAllSongs.js"
 
 const displayAllArtists = (artists) => {
   clearElementChildren(allArtistsContainer);
+  allArtistsContainer.classList.remove(`all-songs-container`);
+  allArtistsContainer.classList.remove(`song-container`);
+  allArtistsContainer.classList.add("all-artists-container");
   const ulSection = document.createElement("ul");
   allArtistsContainer.appendChild(ulSection);
   for (let i = 0; i < artists.length; i++) {
@@ -80,16 +83,5 @@ function drawArtistForm(allArtistsContainer) {
       })
   })
 
-  const songsButton = document.createElement("button");
-  songsButton.innerText = "ALL SONGSPAGE"
-  songsButton.addEventListener('click', () => {
-    fetchAlbums()
-    .then(albums => {
-      displayAllSongs(allArtistsContainer,albums)
-    })
-  })
-  allArtistsContainer.append(songsButton);  
 }
-
-
 const allArtistsContainer = document.querySelector(".all-artists-container")

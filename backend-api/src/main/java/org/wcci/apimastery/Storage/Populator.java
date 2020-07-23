@@ -38,11 +38,7 @@ public class Populator implements CommandLineRunner {
                 " one or two of the songs really begin to resonate with fans of the show, and for Naruto the first song to pop " +
                 "off was Haruka Kanata by Asian Kung-Fu Generation. A link is provided in the list above to show you some details" +
                 " about Haruka Kanata and an imbedded video to listen to. ","10/5", "src/images/naruto-image.jpg");
-        Album narutoAlbum2= new Album("Naruto Album 2", artist1, "Kioon",
-                "Most anime soundtracks are collaboration tracks where every artist contributes a single song. Eventually," +
-                        " one or two of the songs really begin to resonate with fans of the show, and for Naruto the first song to pop " +
-                        "off was Haruka Kanata by Asian Kung-Fu Generation. A link is provided in the list above to show you some details" +
-                        " about Haruka Kanata and an imbedded video to listen to. ","10/5", "src/images/naruto-image.jpg");
+
         Album cowboyAlbum= new Album("Cowboy Bebop", artist2, "Victor Entertainment",
                 "The Cowboy Bebop album titled 'Cowboy Bebop' is as iconic as its main character Spike Spiegal. The first song you" +
                 " hear when you watch the show is titled 'Tank' and it's an instrumental that is remniscient of James Bonds " +
@@ -55,9 +51,8 @@ public class Populator implements CommandLineRunner {
         Album deathnoteAlbum= new Album("The WORLD", artist4, "Nippon Crown","Deathnote is often referred to as a novel, rather" +
                 " than a manga. Its extremely in depth world and story is paralleled by its most popular intro 'The WORLD.'" +
                 "The lyrics to the song describe the story itself, a young man on a mission to change the world with a forbidden" +
-                " power who will stop at nothing to recreate the world in his vision. ", "10/5", "src/images/deathnote.jpg");
+                " power who will stop at nothing to recreate the world in his vision. ", "10/5", "src/images/deathnote-image.jpg");
         albumStorage.save(narutoAlbum);
-        albumStorage.save(narutoAlbum2);
         albumStorage.save(cowboyAlbum);
         albumStorage.save(darlingAlbum);
         albumStorage.save(deathnoteAlbum);
@@ -66,10 +61,6 @@ public class Populator implements CommandLineRunner {
         Song narutoSong2= new Song(artist1, narutoAlbum, "Haruka Kanata", "https://www.youtube.com/embed/nJ6A6GC_ki4", "1:40");
         Song narutoSong3= new Song(artist1, narutoAlbum, "Turning Saddness Into Kindness", "https://www.youtube.com/embed/9TOWvpAhu4g", "4:06");
         Song narutoSong4= new Song(artist1, narutoAlbum, "GO!!!", "https://www.youtube.com/embed/kV5UZvsvjcM", "3:56");
-        Song narutoSong5= new Song(artist1, narutoAlbum2, "R★O★C★K★S", "https://www.youtube.com/watch?v=4t__wczfpRI", "1:44");
-        Song narutoSong6= new Song(artist1, narutoAlbum2, "Haruka Kanata", "https://www.youtube.com/watch?v=nJ6A6GC_ki4", "1:40");
-        Song narutoSong7= new Song(artist1, narutoAlbum2, "Turning Saddness Into Kindness", "https://www.youtube.com/watch?v=9TOWvpAhu4g", "4:06");
-        Song narutoSong8= new Song(artist1, narutoAlbum2, "GO!!!", "https://www.youtube.com/watch?v=kV5UZvsvjcM", "3:56");
         Song cowboySong= new Song(artist2, cowboyAlbum, "Tank!","https://www.youtube.com/embed/n2rVnRwW0h8", "3:31");
         Song cowboySong2= new Song(artist2, cowboyAlbum, "Rush", "https://www.youtube.com/embed/l8wWa3O9cUo", "3:34");
         Song cowboySong3= new Song(artist2, cowboyAlbum, "Spokey Dokey", "https://www.youtube.com/embed/MduJjbcLSqE", "3:34");
@@ -86,10 +77,6 @@ public class Populator implements CommandLineRunner {
         songStorage.save(narutoSong2);
         songStorage.save(narutoSong3);
         songStorage.save(narutoSong4);
-        songStorage.save(narutoSong5);
-        songStorage.save(narutoSong6);
-        songStorage.save(narutoSong7);
-        songStorage.save(narutoSong8);
         songStorage.save(cowboySong);
         songStorage.save(cowboySong2);
         songStorage.save(cowboySong3);

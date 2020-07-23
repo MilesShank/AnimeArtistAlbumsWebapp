@@ -9,6 +9,7 @@ const displayOneSong = (artistContainer, song, album) =>{
     alert(`you clicked on ${song.songTitle}`)
     clearElementChildren(artistContainer);
     artistContainer.classList.add("song-container");
+    artistContainer.classList.add("all-artists-container");
 
     const div  = document.createElement("div");
     div.classList.add("song-details");

@@ -49,26 +49,31 @@ const displayOneAlbum = (artistContainer, album) =>{
             displayOneSong(artistContainer, song, album);
           });
     });
+    div.append(ol)
 
     const albumDetails = document.createElement("section")
     albumDetails.classList.add("album-details")  
     artistInfo.append(albumDetails)
-    albumDetails.innerHTML = `
-    <ul>
+    
+     const ulAlbum = document.createElement("ul");
+     albumDetails.append(ulAlbum);
+     ulAlbum.innerHTML = `
     <strong>
     <li>${album.recordLabel}</li>
     <li>${album.rating}</li>
-    <li>${album.artist}</li>
-     </strong>
-     </ul> 
-     <span class="album-description"> ${album.description}</span> `
-
-    div.append(ol)
+    </strong>
+     `
+     const span = document.createElement("span");
+     span.classList.add("album-description")
+     albumDetails.append(span);
+     span.innerHTML = `${album.description}`
+     
+    
 
     const deleteButton = document.createElement("button");
     deleteButton.innerText = "X Delete Album";
     deleteButton.classList.add("delete-box-submit");
-    artistContainer.appendChild(deleteButton);
+    albumDetails.appendChild(deleteButton);
     
     deleteButton.addEventListener ("click", ()=>{
        deleteAlbum(album,album.id).then((updatedAlbumList)=>{
