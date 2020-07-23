@@ -1,18 +1,6 @@
-export {
-    displayAllAlbums
-}
-import {
-    fetchAlbums
-} from "../fetchArtists.js"
-
-import {
-    clearElementChildren
-} from "../domHelper.js"
-
-import {
-    displayOneAlbum
-} from "./displayOneAlbum.js"
-
+export { displayAllAlbums }
+import { clearElementChildren } from "../domHelper.js"
+import { displayOneAlbum } from "./displayOneAlbum.js"
 
 const displayAllAlbums = (allAlbumsContainer, albums) => {
     clearElementChildren(allAlbumsContainer);
@@ -20,6 +8,7 @@ const displayAllAlbums = (allAlbumsContainer, albums) => {
     allAlbumsContainer.classList.remove(`song-container`);
     allAlbumsContainer.classList.add("all-artists-container");
     allAlbumsContainer.classList.add("all-albums-container");
+
     const ulSection = document.createElement("ul");
     allAlbumsContainer.appendChild(ulSection);
     for (let i = 0; i < albums.length; i++) {
@@ -31,11 +20,9 @@ const displayAllAlbums = (allAlbumsContainer, albums) => {
         albumImg.classList.add("album-art");
         liSection.appendChild(albumImg);
         liSection.addEventListener('click', () => {
-            alert("you clicked me");
             displayOneAlbum(allAlbumsContainer, albums[i]);
         })
         ulSection.appendChild(liSection);
-    }
-    
+    }  
 }
 

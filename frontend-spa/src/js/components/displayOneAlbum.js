@@ -1,23 +1,10 @@
-import { 
-    clearElementChildren 
-} from "../domHelper.js"
-import {
-    displayOneSong
-} from "./displayOneSong.js"
-import {
-    deleteAlbum, fetchArtists
-} from "../fetchArtists.js"
-import {
-    displayAllArtists
-} from "./displayAllArtists.js"
-export {
-    displayOneAlbum
-}
-
-
+import { clearElementChildren } from "../domHelper.js"
+import { displayOneSong } from "./displayOneSong.js"
+import { deleteAlbum, fetchArtists } from "../fetchArtists.js"
+import { displayAllArtists } from "./displayAllArtists.js"
+export { displayOneAlbum}
 
 const displayOneAlbum = (artistContainer, album) =>{
-    alert(`you clicked on ${album.title}`)
     clearElementChildren(artistContainer)
 
     const artistInfo = document.createElement("section")
@@ -35,6 +22,7 @@ const displayOneAlbum = (artistContainer, album) =>{
     const div2 = document.createElement("div")
     div2.classList = "artist-grid-item2"
     artistInfo.append(div2)
+
     const albumImg = document.createElement("img")
     div2.append(albumImg)
     albumImg.src= album.imageSource
@@ -55,21 +43,19 @@ const displayOneAlbum = (artistContainer, album) =>{
     albumDetails.classList.add("album-details")  
     artistInfo.append(albumDetails)
     
-     const ulAlbum = document.createElement("ul");
-     albumDetails.append(ulAlbum);
-     ulAlbum.innerHTML = `
-    <strong>
-    <li>${album.recordLabel}</li>
-    <li>${album.rating}</li>
-    </strong>
-     `
-     const span = document.createElement("span");
-     span.classList.add("album-description")
-     albumDetails.append(span);
-     span.innerHTML = `${album.description}`
-     
-    
+    const ulAlbum = document.createElement("ul");
+    albumDetails.append(ulAlbum);
+    ulAlbum.innerHTML = 
+       `<strong>
+        <li>${album.recordLabel}</li>
+        <li>${album.rating}</li>
+        </strong>`
 
+    const span = document.createElement("span");
+    span.classList.add("album-description")
+    albumDetails.append(span);
+    span.innerHTML = `${album.description}`
+    
     const deleteButton = document.createElement("button");
     deleteButton.innerText = "X Delete Album";
     deleteButton.classList.add("delete-box-submit");
@@ -81,7 +67,6 @@ const displayOneAlbum = (artistContainer, album) =>{
         .then(artists => {
             displayAllArtists(artists)
         })
-
-       } );
+       });
     })
 }
