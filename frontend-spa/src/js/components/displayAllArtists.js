@@ -2,7 +2,7 @@ export {
     displayAllArtists
 }
 import {
-  fetchArtists, postNewArtist
+  fetchArtists, postNewArtist, fetchAlbums
 }from "../fetchArtists.js"
 import{
   clearElementChildren
@@ -10,6 +10,7 @@ import{
 import{
   displayOneArtist
 }from "./displayOneArtist.js"
+import { displayAllSongs } from "./displayAllSongs.js"
 
 const displayAllArtists = (artists) => {
   clearElementChildren(allArtistsContainer);
@@ -78,6 +79,16 @@ function drawArtistForm(allArtistsContainer) {
         displayAllArtists( artists)
       })
   })
+
+  const songsButton = document.createElement("button");
+  songsButton.innerText = "ALL SONGSPAGE"
+  songsButton.addEventListener('click', () => {
+    fetchAlbums()
+    .then(albums => {
+      displayAllSongs(allArtistsContainer,albums)
+    })
+  })
+  allArtistsContainer.append(songsButton);  
 }
 
 
