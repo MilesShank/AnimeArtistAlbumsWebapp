@@ -126,6 +126,12 @@ nav a:hover,
 h1{
     text-align: center;
  }
+.headerImg{
+    border-radius: 0px;
+    height:30px;
+    margin-right: 10px;
+}
+
 iframe{
     border-style: double;
     border-width: 1em;
