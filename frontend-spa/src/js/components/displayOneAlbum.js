@@ -41,15 +41,17 @@ const displayOneAlbum = (artistContainer, album) =>{
 
     const albumDetails = document.createElement("section")
     albumDetails.classList.add("album-details")  
-    artistInfo.append(albumDetails)
-    
+    const strongAlbum = document.createElement("strong")
+    albumDetails.appendChild(strongAlbum)
     const ulAlbum = document.createElement("ul");
-    albumDetails.append(ulAlbum);
-    ulAlbum.innerHTML = 
-       `<strong>
-        <li>${album.recordLabel}</li>
-        <li>${album.rating}</li>
-        </strong>`
+    strongAlbum.appendChild(ulAlbum)
+    const recordLi = document.createElement("li")
+    recordLi.innerHTML = `${album.recordLabel}`
+    ulAlbum.appendChild(recordLi)
+    const ratingLi = document.createElement("li")
+    ulAlbum.appendChild(ratingLi)
+    ratingLi.innerHTML = `${album.rating}`
+    artistInfo.append(albumDetails)
 
     const span = document.createElement("span");
     span.classList.add("album-description")
